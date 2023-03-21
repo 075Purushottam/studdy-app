@@ -1,0 +1,32 @@
+{%extends 'main.html'%}
+
+{%block content%}
+
+<section class="grid-container">
+  <div class="topics">
+    {%include 'base/topics_component.html' %}
+  </div>
+
+  <div class="room">
+  <div class="roomstop">
+    <div class="roomsHeading">
+      <h3>Create your own room</h3>
+      <p>Total {{room_count}} rooms</p>
+    </div>
+
+    <div class="roomsBtn">
+      <a href="{% url 'create-room'%}"><button class="createRoombtn">+ Create Room</button></a>
+    </div>
+    </div>
+    {%include 'base/feed_component.html' %}
+  </div>
+
+  <div class="recents">
+    <h3>Recent Activity</h3>
+    {%include 'base/activity_component.html' %}
+  </div>
+
+
+
+</section>
+{%endblock content%}

@@ -1,0 +1,8 @@
+
+<h3>Topics</h3>
+<div class="topics-container">
+<a href="{% url 'home' %}">All</a>
+  {% for topic in topics%}
+  <a href="{% url 'home' %}?q={{topic.name}}">{{topic}}</a>
+{%endfor%}
+</div>

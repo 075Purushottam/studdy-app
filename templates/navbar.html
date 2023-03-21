@@ -1,0 +1,45 @@
+<!-- <a href="/">
+    <h1>Logo</h1>
+</a>
+
+<form method="get" action="{% url 'home'%}">
+    <input type="text" name="q" placeholder="Search room">
+</form>
+
+{%if request.user.is_authenticated%}
+<p>Hello, {{request.user}}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{%else%}
+<a href="{% url 'login' %}">Login</a>
+{%endif%} -->
+<!-- <hr> -->
+<div class="navbar mx-3">
+    <!-- <img src="Free_Sample_By_Wix.jpg" alt=""> -->
+    <div class="logoBx">
+        <a href="/"><h2>Studd'yChat</h2>
+        <p>Chat like a Studd</p></a>
+    </div>
+    <form class="form-inline" method="get" action="{% url 'home'%}">
+      <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search room" aria-label="Search">
+      <!-- <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button> -->
+    </form>
+    <li><a href="#">Students</a></li>
+    <li>
+         <div class="dropdown">
+            <button class="dropbtn">Projects</button>
+            <div class="dropdown-content">
+                <a href="#">Android</a>
+                <a href="#">Web Development</a>
+                <a href="#">Machine Learning</a>
+            </div>
+        </div>
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Rooms</a></li>
+{%if request.user.is_authenticated%}
+<h3>@{{request.user}}</h3>
+<button type="button"><a class="btn btn-sm px-4 py-2 btn-outline-secondary" href="{% url 'logout' %}">Logout</a></button>
+{%else%}
+<button type="button"><a class="btn btn-sm px-4 py-2 btn-outline-secondary" href="{% url 'login' %}">Login</a></button>
+{%endif%}
+</div>
